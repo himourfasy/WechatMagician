@@ -25,11 +25,7 @@ class WechatResHook : IXposedHookZygoteInit, IXposedHookInitPackageResources {
         }
 
         // Set language for LocalizedResources
-        LocalizedResources.language = if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.N) {
-            resparam.res.configuration.locales[0]
-        } else {
-            resparam.res.configuration.locale
-        }.language
+        LocalizedResources.language = resparam.res.configuration.locales[0].language
 
         // Load resources
         MODULE_RES = XModuleResources.createInstance(MODULE_PATH, resparam.res)

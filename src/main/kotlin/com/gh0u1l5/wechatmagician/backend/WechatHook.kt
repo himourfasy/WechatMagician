@@ -75,9 +75,10 @@ class WechatHook : IXposedHookLoadPackage {
         tryHook(this::hookAlbumPreviewUI, {
             pkg.AlbumPreviewUI = null
         })
-        tryHook(this::hookSelectContactUI, {
-            pkg.SelectContactUI = null
-        })
+        //removed for conflicting with md
+//        tryHook(this::hookSelectContactUI, {
+//            pkg.SelectContactUI = null
+//        })
         tryHook(this::hookSelectConversationUI, {
             pkg.SelectConversationUI = null
         })
